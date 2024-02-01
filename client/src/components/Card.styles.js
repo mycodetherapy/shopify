@@ -4,6 +4,9 @@ import Grid from "@mui/material/Grid";
 
 export const CardRoot = styled(Box)(({ theme }) => ({
   width: "100%",
+  height: "85vh",
+  display: "flex",
+  flexDirection: "column",
 }));
 
 export const CardContainer = styled(Grid)(({ theme }) => ({
@@ -11,6 +14,7 @@ export const CardContainer = styled(Grid)(({ theme }) => ({
   margin: theme.spacing(1),
   display: "flex",
   justifyContent: "center",
+  flexDirection: "column",
   borderRadius: 10,
   backgroundColor: "#FFF8DC",
   boxShadow: "0 5px 10px 0 rgba(0, 0, 0, 0.25)",
@@ -34,10 +38,15 @@ export const CardName = styled("div")(({ theme }) => ({
   color: "#8B0000",
   overflow: "hidden",
   textOverflow: "ellipsis",
+  flex: "0 0 auto",
 }));
 
 export const ContentContainer = styled("div")(({ theme }) => ({
   padding: 16,
+  flex: 1,
+  overflow: "hidden",
+  display: "flex",
+  flexDirection: "column",
 }));
 
 export const ImageContainer = styled("div")(({ theme }) => ({
@@ -45,12 +54,22 @@ export const ImageContainer = styled("div")(({ theme }) => ({
   justifyContent: "center",
   padding: "0 auto",
   maxWidth: "800px",
-  maxWeight: "800px",
+  maxHeight: "100%",
 }));
 
 export const TextContainer = styled("div")(({ theme }) => ({
-  display: "-webkit-box",
-  WebkitBoxOrient: "vertical",
-  overflow: "hidden",
-  WebkitLineClamp: 12,
+  overflowY: "scroll",
+  "&::-webkit-scrollbar": {
+    width: "8px",
+  },
+
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "#888",
+    borderRadius: "4px",
+  },
+
+  "&::-webkit-scrollbar-track": {
+    backgroundColor: "#FFF8DC",
+    borderRadius: "4px",
+  },
 }));

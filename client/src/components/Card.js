@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   CardName,
   CardRoot,
@@ -8,7 +8,6 @@ import {
 } from "./Card.styles";
 
 export const Card = ({ key, product }) => {
-  console.log();
   useEffect(() => {
     product.images.forEach((image, index) =>
       drawImageOnCanvas(image, `canvas-${product.shopifyId}-${index}`)
@@ -28,7 +27,7 @@ export const Card = ({ key, product }) => {
     img.src = imageSrc;
 
     const draw = () => {
-      const maxWidth = 800;
+      const maxWidth = 400;
       const parentElement = canvas.parentElement;
 
       if (parentElement) {
